@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="SuperSmallModel — a ~1M-parameter GPT you can download, run, or train on a laptop."
+  />
+  <title>SuperSmallModel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Fragment+Mono:wght@400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero" aria-label="SuperSmallModel">
+      <div class="hero-atmosphere" aria-hidden="true">
+        <p class="drift drift-a">MENENIUS: the Senate…</p>
+        <p class="drift drift-b">Once upon a tiny weight…</p>
+        <p class="drift drift-c">attn(Q, K, V) · causal · BPE</p>
+        <p class="drift drift-d">957,184 parameters</p>
+      </div>
+      <div class="hero-content">
+        <p class="brand">SuperSmallModel</p>
+        <h1 class="headline">A GPT small enough to train at home.</h1>
+        <p class="lede">
+          Pure PyTorch, built from scratch — download weights and run, or train the whole stack on a laptop.
+        </p>
+        <div class="cta">
+          <a
+            class="cta-primary"
+            href="https://github.com/AlexWoods1/SuperSmallModel/releases"
+            >Download</a
+          >
+          <a class="cta-secondary" href="#run">Run locally</a>
+          <a class="cta-secondary" href="#train">Train</a>
+        </div>
+      </div>
+    </header>
+
+    <section id="run" class="section">
+      <h2>Run</h2>
+      <p class="section-lede">Clone, sync, generate from a checkpoint.</p>
+      <pre class="code"><code>git clone https://github.com/AlexWoods1/SuperSmallModel.git
+cd SuperSmallModel
+uv sync
+uv run stlm generate --checkpoint checkpoints/toy_cpu/ckpt_5000.pt --prompt "MENENIUS:" --max-tokens 200</code></pre>
+    </section>
+
+    <section id="about" class="section">
+      <h2>What’s inside</h2>
+      <p class="section-lede">
+        ~957k parameters · 4×128 GPT · byte-level BPE · hand-written causal attention · MIT
+      </p>
+    </section>
+
+    <section id="train" class="section">
+      <h2>Train yourself</h2>
+      <p class="section-lede">
+        Smoke run in minutes; full toy config in hours on CPU. GPU is used automatically when CUDA is available.
+      </p>
+      <pre class="code"><code>uv run stlm train --config configs/smoke.yaml
+uv run stlm train --config configs/toy_cpu.yaml</code></pre>
+      <p class="doc-link">
+        <a href="https://github.com/AlexWoods1/SuperSmallModel/blob/main/docs/training.md"
+          >Training guide</a
+        >
+        ·
+        <a href="https://github.com/AlexWoods1/SuperSmallModel/blob/main/docs/architecture.md"
+          >Architecture</a
+        >
+      </p>
+    </section>
+
+    <footer class="footer">
+      <a href="https://github.com/AlexWoods1/SuperSmallModel">GitHub</a>
+      <span class="sep">·</span>
+      <span>MIT</span>
+      <span class="sep">·</span>
+      <span>STLM</span>
+    </footer>
+  </div>
+</body>
+</html>

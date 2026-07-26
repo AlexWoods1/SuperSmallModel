@@ -1,0 +1,34 @@
+# configs/smoke.yaml — prove the pipeline in ~5–10 minutes on CPU
+
+model:
+  n_layer: 2
+  n_head: 2
+  n_embd: 64
+  block_size: 64
+  vocab_size: 1024       # overridden from tokenizer at train time; keep roughly in sync
+  dropout: 0.0
+  bias: true             # LayerNorm / Linear bias on/off
+
+train:
+  batch_size: 16
+  max_steps: 200          # tiny; just enough to see loss move
+  learning_rate: 3.0e-4
+  weight_decay: 0.1
+  beta1: 0.9
+  beta2: 0.99
+  warmup_steps: 5
+  grad_clip: 1.0
+  eval_interval: 10
+  eval_batches: 2
+  sample_interval: 25
+  checkpoint_interval: 50
+  seed: 1337
+
+data:
+  dataset: shakespeare   # plan: fast smoke path; TinyStories for toy_cpu
+  data_dir: data/smoke
+  train_frac: 0.9
+
+paths:
+  out_dir: checkpoints/smoke
+  tokenizer_path: data/smoke/tokenizer.json

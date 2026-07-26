@@ -1,0 +1,29 @@
+[project]
+name = "stlm"
+version = "0.1.0"
+description = "A ~1M-parameter GPT built from scratch in pure PyTorch"
+readme = "README.md"
+authors = [
+    { name = "AlexWoods1", email = "160354642+AlexWoods1@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "datasets>=5.0.0",
+    "numpy>=2.5.1",
+    "pyyaml>=6.0.3",
+    "torch>=2.13.0",
+]
+
+[project.scripts]
+stlm = "stlm.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.19,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "pyyaml>=6.0.3",
+]
