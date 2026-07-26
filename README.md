@@ -36,7 +36,7 @@ It's not 10 trillion parameter claude mythos, It's under a million parameters. I
 **Requires:** Python 3.14+, [uv](https://docs.astral.sh/uv/)
 
 ```powershell
-git clone https://github.com/YOUR_USER/SuperSmallModel.git
+git clone https://github.com/AlexWoods1/SuperSmallModel.git
 cd SuperSmallModel
 uv sync
 ```
