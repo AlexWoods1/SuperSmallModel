@@ -105,4 +105,4 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
-Built as an open, handcrafted mini-LLM for learning and hiring portfolios. Feedback welcome via GitHub. Some of the tests and docs were written by cursor. 
+Built as an open, handcrafted mini-LLM for learning and hiring portfolios. Feedback welcome via GitHub. Some of the tests and docs were written by cursor. Model made, trained, and repo completed in roughly 24 Hours.
